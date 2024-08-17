@@ -9,12 +9,124 @@
 :root {
     --padding-inline-section: 20px;
 }
+
+.hamburger {
+    padding: 15px;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  .hamburger__container {
+    width: 36px;
+    height: 24px;
+    position: relative;
+  }
+  .hamburger:hover .hamburger__inner {
+    transform: translate(-51px, 50%);
+    opacity: 0;
+  }
+  .hamburger:hover .hamburger__inner::before, .hamburger:hover .hamburger__inner::after {
+    transform: translate(102px, 0);
+    opacity: 0;
+  }
+  .hamburger.is-active .hamburger__inner {
+    display: none;
+  }
+  .hamburger__inner {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+    top: 50%;
+    transform: translate(5px, -50%);
+    opacity: 1;
+  }
+  .hamburger__inner::before, .hamburger__inner::after {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+    content: "";
+    opacity: 1;
+    transform: translate(-5px, 0);
+  }
+  .hamburger__inner::before {
+    top: -13px;
+  }
+  .hamburger__inner::after {
+    top: 13px;
+  }
+  .hamburger:hover .hamburger__hidden {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  .hamburger:hover .hamburger__hidden::before, .hamburger:hover .hamburger__hidden::after {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .hamburger.is-active .hamburger__hidden {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  .hamburger.is-active .hamburger__hidden::before {
+    transform: translate(0, 13px) rotate(90deg);
+    transform-origin: center;
+  }
+  .hamburger.is-active .hamburger__hidden::after {
+    transform-origin: center;
+    transform: translate(0, -13px) rotate(0);
+  }
+  .hamburger__hidden {
+    opacity: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+    background-color: red;
+    top: 50%;
+    transform: translate(51px, -50%);
+  }
+  .hamburger__hidden::before, .hamburger__hidden::after {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.4s;
+    background-color: red;
+    content: "";
+    transform: translate(102px, 0);
+  }
+  .hamburger__hidden::before {
+    top: -13px;
+  }
+  .hamburger__hidden::after {
+    top: 13px;
+  }
 .subheader{
     background: rgb(240, 237, 237);
     /* max-height: 100px; */
     height: auto;
     user-select: none;
 
+}
+.hamburger{
+    display: none;
 }
 .container {
     max-width: 1180px;
@@ -67,10 +179,7 @@ li:hover{
     scale: 1.1;
     transition: all .5s ease;
 }
-.d-none:hover{
-    scale: 1.4;
-    transition: all .5s ease;
-}
+
 h5{
     font-size: 1rem;
 }
@@ -81,9 +190,7 @@ h5{
     width: 90%;
     text-align: center;
 }
-.d-none{
-    display: none;
-}
+
 .quote-container-2:hover{
     box-shadow: 0px 0px 10px black;
 }
@@ -213,7 +320,7 @@ h3{
 .website-cards:hover{
     box-shadow: 0px 0px 20px black;
     border-radius: 25px 25px 0px 0px;
-
+    
     transition: all .4s ease;
 }
 .multiple-flex-box{
@@ -456,6 +563,9 @@ a{
     *{
         line-height: auto;
     }
+    .hamburger{
+        display: inline-block;
+    }
     .container-edit{
         flex-direction: column;
         gap: 10px;
@@ -483,9 +593,7 @@ a{
     ul{
         flex-direction: column;
     }
-    .d-none{
-        display: block;
-    }
+   
     .container-main-1{
         width: 90%;
     }
@@ -549,6 +657,9 @@ a{
     *{
         line-height: auto;
     }
+    .hamburger{
+        display: inline-block;
+    }
     .container-edit{
         flex-direction: column;
         gap: 10px;
@@ -576,9 +687,7 @@ a{
         flex-direction: column;
     }
     
-    .d-none{
-        display: block;
-    }
+   
     .leftheader{
         margin-top: 10px;
         margin-bottom: 0px;

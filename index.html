@@ -75,10 +75,13 @@
             </ul>
           </nav>
         </div>
-        <a href="#"
-          ><h5 class="d-none nav-toggle" id="nav-toggle">
-            <i class="fa-solid fa-bars"></i></h5
-        ></a>
+        <div class="hamburger" id="nav-toggle">
+          <div class="hamburger__container">
+            <div class="hamburger__inner"></div>
+            <div class="hamburger__hidden"></div>
+          </div>
+        </div>
+        
       </div>
     </section>
     <section class="home" id="home">
@@ -520,14 +523,25 @@
         </div>
       </div>
     </section>
-
     <script>
+          document.querySelector('.hamburger').addEventListener('click', (e) => {
+      e.currentTarget.classList.toggle('is-active');
       const toggleButton = document.getElementById("nav-toggle");
       const navLinks = document.getElementById("nav-links");
 
       toggleButton.addEventListener("click", () => {
         navLinks.classList.toggle("active");
       });
+    })
     </script>
+
+    <!-- <script>
+      const toggleButton = document.getElementById("nav-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      toggleButton.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script> -->
   </body>
 </html>
