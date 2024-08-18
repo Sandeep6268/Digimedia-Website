@@ -12,8 +12,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
-  <body>
+  <body class="animate__animated animate__fadeIn">
     <section class="subheader">
       <div class="container flex container-edit">
         <div class="left-subheader flex">
@@ -81,7 +85,6 @@
             <div class="hamburger__hidden"></div>
           </div>
         </div>
-        
       </div>
     </section>
     <section class="home" id="home">
@@ -125,7 +128,7 @@
         </div>
       </div>
     </section>
-    <section class="services">
+    <section class="services" id="services">
       <div class="container">
         <div class="ourservices ourservices-660 flex">
           <div class="color-voilet"><h6>OUR SERVICES</h6></div>
@@ -180,7 +183,7 @@
         </div>
       </div>
     </section>
-    <section class="seo" id="services">
+    <section class="seo">
       <div class="container flex seo-container">
         <div class="analysis-container analysis-786">
           <div class="color-heading">
@@ -524,15 +527,15 @@
       </div>
     </section>
     <script>
-          document.querySelector('.hamburger').addEventListener('click', (e) => {
-      e.currentTarget.classList.toggle('is-active');
-      const toggleButton = document.getElementById("nav-toggle");
-      const navLinks = document.getElementById("nav-links");
+      document.querySelector(".hamburger").addEventListener("click", (e) => {
+        e.currentTarget.classList.toggle("is-active");
+        const toggleButton = document.getElementById("nav-toggle");
+        const navLinks = document.getElementById("nav-links");
 
-      toggleButton.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+        toggleButton.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
       });
-    })
     </script>
 
     <!-- <script>
