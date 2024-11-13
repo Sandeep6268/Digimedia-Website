@@ -136,6 +136,7 @@
 .header{
     position: sticky;
     top: 0;
+    z-index: 2;
     /* background: rgb(0, 9, 141); */
     background: linear-gradient(to left,rgb(47, 5, 235),rgb(226, 43, 43));
 }
